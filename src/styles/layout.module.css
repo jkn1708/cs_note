@@ -1,0 +1,53 @@
+.header {
+  background: rgba(15, 15, 18, 0.9);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+}
+
+.headerInner {
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.brand {
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: 0.01em;
+}
+
+.navList {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.navLink {
+  opacity: 0.8;
+  font-weight: 500;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.navLink:hover {
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+.footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin-top: 3rem;
+  background: rgba(15, 15, 18, 0.9);
+}
+
+.footerInner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.68);
+  text-align: center;
+}

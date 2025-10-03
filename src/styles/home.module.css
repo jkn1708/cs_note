@@ -1,0 +1,116 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: radial-gradient(circle at 0% 0%, rgba(83, 160, 255, 0.08), transparent 45%),
+    radial-gradient(circle at 100% 100%, rgba(247, 149, 51, 0.1), transparent 50%),
+    linear-gradient(180deg, rgba(15, 15, 18, 1) 0%, rgba(10, 10, 12, 1) 100%);
+  color: #f5f5f5;
+}
+
+.main {
+  flex: 1;
+}
+
+.hero {
+  max-width: 960px;
+  margin: 4rem auto 3rem;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.heroHeading {
+  font-size: clamp(2.25rem, 4vw, 3rem);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.heroSubheading {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.7;
+  max-width: 52ch;
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.primaryAction,
+.secondaryAction {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.4rem;
+  border-radius: 999px;
+  font-weight: 600;
+  border: 1px solid transparent;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.primaryAction {
+  background: linear-gradient(135deg, #53a0ff, #6f5cff);
+  color: #0b0b0d;
+  box-shadow: 0 12px 25px rgba(95, 105, 255, 0.3);
+}
+
+.primaryAction:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 32px rgba(95, 105, 255, 0.4);
+}
+
+.secondaryAction {
+  background: rgba(255, 255, 255, 0.08);
+  color: #f5f5f5;
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.secondaryAction:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.sectionHeader {
+  max-width: 960px;
+  margin: 0 auto 1.5rem;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.sectionTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.noteGrid {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1.5rem 4rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .sectionHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .actions {
+    width: 100%;
+  }
+
+  .primaryAction,
+  .secondaryAction {
+    flex: 1;
+    justify-content: center;
+  }
+}
