@@ -13,23 +13,24 @@ export default function HomePage() {
       <AppHeader />
       <main className={styles.main}>
         <section className={styles.hero}>
+          <h1 className={styles.heroHeading}>나만의 CS 노트를 채워나가세요.</h1>
           <p className={styles.heroSubheading}>
-            프론트엔드 개발자로서 필요한 각종 cs 지식을 정리하는 노트입니다.
+            프론트엔드 개발자로서 필요한 각종 CS 지식을 카테고리별로 정리하고, 언제든 다시 복습할 수 있도록 구성한 공간입니다.
           </p>
           <div className={styles.actions}>
             <Link href="/notes/new" className={styles.primaryAction}>
-              Create a note
+              새 노트 작성하기
             </Link>
             <Link href="/notes" className={styles.secondaryAction}>
-              Browse notes
+              전체 노트 살펴보기
             </Link>
           </div>
         </section>
 
         <div className={styles.sectionHeader}>
-          <h2 className={styles.sectionTitle}>List</h2>
+          <h2 className={styles.sectionTitle}>최근에 다룬 주제</h2>
           <Link href="/notes" className={styles.secondaryAction}>
-            View all
+            모두 보기
           </Link>
         </div>
 
