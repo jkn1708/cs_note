@@ -18,21 +18,24 @@ export const sampleNotes: NoteSummary[] = [
   {
     id: "operating-systems",
     title: "Operating Systems",
-    description: "Process lifecycle, scheduling strategies, and synchronization primitives.",
+    description:
+      "Process lifecycle, scheduling strategies, and synchronization primitives.",
     tags: ["OS", "Concurrency"],
     updatedAt: "2024-05-10",
   },
   {
     id: "network-basics",
     title: "Networking Fundamentals",
-    description: "OSI vs TCP/IP layers, congestion control, and common debugging tools.",
+    description:
+      "OSI vs TCP/IP layers, congestion control, and common debugging tools.",
     tags: ["Network"],
     updatedAt: "2024-04-28",
   },
   {
     id: "data-structures",
     title: "Data Structures",
-    description: "Trade-offs between trees, heaps, and hash tables plus implementation tips.",
+    description:
+      "Trade-offs between trees, heaps, and hash tables plus implementation tips.",
     tags: ["DataStructure"],
     updatedAt: "2024-03-18",
   },
@@ -42,7 +45,8 @@ export const sampleNoteDetails: Record<string, NoteDetail> = {
   "operating-systems": {
     id: "operating-systems",
     title: "Operating Systems",
-    description: "Process lifecycle, scheduling strategies, and synchronization primitives.",
+    description:
+      "Process lifecycle, scheduling strategies, and synchronization primitives.",
     tags: ["OS", "Concurrency"],
     updatedAt: "2024-05-10",
     readingTime: "약 6분",
@@ -64,7 +68,8 @@ export const sampleNoteDetails: Record<string, NoteDetail> = {
   "network-basics": {
     id: "network-basics",
     title: "Networking Fundamentals",
-    description: "OSI vs TCP/IP layers, congestion control, and common debugging tools.",
+    description:
+      "OSI vs TCP/IP layers, congestion control, and common debugging tools.",
     tags: ["Network"],
     updatedAt: "2024-04-28",
     readingTime: "약 5분",
@@ -86,7 +91,8 @@ export const sampleNoteDetails: Record<string, NoteDetail> = {
   "data-structures": {
     id: "data-structures",
     title: "Data Structures",
-    description: "Trade-offs between trees, heaps, and hash tables plus implementation tips.",
+    description:
+      "Trade-offs between trees, heaps, and hash tables plus implementation tips.",
     tags: ["DataStructure"],
     updatedAt: "2024-03-18",
     readingTime: "약 4분",

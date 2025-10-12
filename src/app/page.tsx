@@ -15,10 +15,11 @@ export default function HomePage() {
         <section className={styles.hero}>
           <h1 className={styles.heroHeading}>나만의 CS 노트를 채워나가세요.</h1>
           <p className={styles.heroSubheading}>
-            프론트엔드 개발자로서 필요한 각종 CS 지식을 카테고리별로 정리하고, 언제든 다시 복습할 수 있도록 구성한 공간입니다.
+            프론트엔드 개발자로서 필요한 각종 CS 지식을 카테고리별로 정리하고,
+            언제든 다시 복습할 수 있도록 구성한 공간입니다.
           </p>
           <div className={styles.actions}>
-            <Link href="/notes/new" className={styles.primaryAction}>
+            <Link href="/editnote" className={styles.primaryAction}>
               새 노트 작성하기
             </Link>
             <Link href="/notes" className={styles.secondaryAction}>
