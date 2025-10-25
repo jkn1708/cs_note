@@ -2,7 +2,7 @@ import Link from "next/link";
 import { AppFooter } from "@/components/layout/AppFooter";
 import { AppHeader } from "@/components/layout/AppHeader";
 import styles from "@/styles/editnote.module.css";
-import Tiptap from "@/components/editor/Tiptap";
+import Editor from "@/components/editor/Editor";
 
 export default function EditNotePage() {
   return (
@@ -11,7 +11,7 @@ export default function EditNotePage() {
       <main className={styles.main}>
         <article className={styles.article}>
           <div className={styles.content}>
-            <Tiptap />
+            <Editor init_focus />
           </div>
         </article>
         <footer className={styles.backLinks}>

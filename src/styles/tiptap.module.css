@@ -1,0 +1,99 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid #dbeafe;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+}
+
+.toolbarGroup {
+  display: flex;
+  gap: 0.4rem;
+  padding-right: 0.65rem;
+  margin-right: 0.65rem;
+  border-right: 1px solid rgba(148, 163, 184, 0.35);
+}
+
+.toolbarGroup:last-child {
+  border-right: none;
+  margin-right: 0;
+  padding-right: 0;
+}
+
+.toolButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #1e293b;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease,
+    box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.toolButton:hover,
+.toolButton:focus-visible {
+  border-color: #93c5fd;
+  background: #e0f2fe;
+  box-shadow: 0 8px 18px rgba(148, 163, 184, 0.35);
+  outline: none;
+  transform: translateY(-1px);
+}
+
+.toolButton:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  border-color: transparent;
+  box-shadow: none;
+  transform: none;
+}
+
+.toolButtonAction {
+  font-weight: 500;
+  color: #475569;
+}
+
+.toolButtonActive {
+  border-color: #2563eb;
+  background: #dbeafe;
+  color: #1d4ed8;
+  box-shadow: inset 0 0 0 1px rgba(37, 99, 235, 0.2),
+    0 10px 22px rgba(59, 130, 246, 0.2);
+}
+
+.editor {
+  min-height: 60vh;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 1.5rem;
+  background: #ffffff;
+}
+
+.editor :global(.ProseMirror) {
+  min-height: 60vh;
+  outline: none;
+}
+
+.editor :global(pre) {
+  border: 1px solid #94a3b8;
+  border-radius: 8px;
+  padding: 1rem;
+  background: #0f172a;
+  color: #e2e8f0;
+}
