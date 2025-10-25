@@ -1,0 +1,142 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f7f9fc;
+}
+
+.main {
+  flex: 1;
+  padding: 3rem 1.5rem 4rem;
+}
+
+.breadcrumb {
+  max-width: 760px;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.crumb {
+  color: inherit;
+  transition: color 0.2s ease;
+}
+
+.crumb:hover {
+  color: #2563eb;
+}
+
+.current {
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.article {
+  max-width: 760px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.08);
+  padding: 2.5rem;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.metaTop {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.title {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.2;
+}
+
+.description {
+  color: #475569;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.tagGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  background: #e0f2fe;
+  color: #0369a1;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.section h2 {
+  font-size: 1.4rem;
+  color: #1d4ed8;
+  margin-bottom: 0.75rem;
+}
+
+.section p {
+  color: #334155;
+  line-height: 1.75;
+}
+
+.backLinks {
+  max-width: 760px;
+  margin: 2rem auto 0;
+  text-align: right;
+}
+
+.secondaryAction {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.4rem;
+  border-radius: 999px;
+  font-weight: 600;
+  background: #e2e8f0;
+  color: #1e293b;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.secondaryAction:hover {
+  background: #cbd5f5;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .main {
+    padding: 2rem 1rem 3rem;
+  }
+
+  .article {
+    padding: 2rem 1.5rem;
+  }
+
+  .backLinks {
+    text-align: left;
+  }
+}

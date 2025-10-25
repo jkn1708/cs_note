@@ -3,7 +3,7 @@ import styles from "@/styles/layout.module.css";
 
 const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/notes", label: "Notes" },
+  { href: "/list", label: "Notes" },
   { href: "/tags", label: "Tags" },
 ];
 

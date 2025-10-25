@@ -27,7 +27,7 @@ export default function NoteDetailPage({ params }: NoteDetailPageProps) {
             홈
           </Link>
           <span aria-hidden="true">/</span>
-          <Link href="/notes" className={styles.crumb}>
+          <Link href="/list" className={styles.crumb}>
             노트
           </Link>
           <span aria-hidden="true">/</span>
@@ -63,7 +63,7 @@ export default function NoteDetailPage({ params }: NoteDetailPageProps) {
         </article>
 
         <footer className={styles.backLinks}>
-          <Link href="/notes" className={styles.secondaryAction}>
+          <Link href="/list" className={styles.secondaryAction}>
             노트 목록으로 돌아가기
           </Link>
         </footer>

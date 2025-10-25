@@ -22,7 +22,7 @@ export default function HomePage() {
             <Link href="/editnote" className={styles.primaryAction}>
               새 노트 작성하기
             </Link>
-            <Link href="/notes" className={styles.secondaryAction}>
+            <Link href="/list" className={styles.secondaryAction}>
               전체 노트 살펴보기
             </Link>
           </div>
@@ -30,7 +30,7 @@ export default function HomePage() {
 
         <div className={styles.sectionHeader}>
           <h2 className={styles.sectionTitle}>최근에 다룬 주제</h2>
-          <Link href="/notes" className={styles.secondaryAction}>
+          <Link href="/list" className={styles.secondaryAction}>
             모두 보기
           </Link>
         </div>

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { AppFooter } from "@/components/layout/AppFooter";
 import { AppHeader } from "@/components/layout/AppHeader";
-import styles from "@/styles/note-detail.module.css";
+import styles from "@/styles/editnote.module.css";
 import Tiptap from "@/components/editor/Tiptap";
 
 export default function EditNotePage() {
@@ -9,9 +9,13 @@ export default function EditNotePage() {
     <div className={styles.page}>
       <AppHeader />
       <main className={styles.main}>
-        <Tiptap />
+        <article className={styles.article}>
+          <div className={styles.content}>
+            <Tiptap />
+          </div>
+        </article>
         <footer className={styles.backLinks}>
-          <Link href="/notes" className={styles.secondaryAction}>
+          <Link href="/list" className={styles.secondaryAction}>
             노트 목록으로 돌아가기
           </Link>
         </footer>
