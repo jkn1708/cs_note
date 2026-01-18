@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { Editor } from "@tiptap/react";
 import styles from "@/styles/tiptap.module.css";
 import useToolbar from "./hooks/useToolbar";

@@ -7,13 +7,14 @@ import { getSampleNote } from "@/mock/sample-notes";
 import styles from "@/styles/note-detail.module.css";
 
 type NoteDetailPageProps = {
-  params: {
+  params: Promise<{
     noteId: string;
-  };
+  }>;
 };
 
-export default function NoteDetailPage({ params }: NoteDetailPageProps) {
-  const note = getSampleNote(params.noteId);
+export default async function NoteDetailPage({ params }: NoteDetailPageProps) {
+  const { noteId } = await params;
+  const note = getSampleNote(noteId);
 
   if (!note) {
     notFound();
@@ -60,6 +61,9 @@ export default function NoteDetailPage({ params }: NoteDetailPageProps) {
         </article>
 
         <footer className={styles.backLinks}>
+          <Link href={`/editnote/${note.id}`} className={styles.secondaryAction}>
+            노트 편집하기
+          </Link>
           <Link href="/list" className={styles.secondaryAction}>
             노트 목록으로 돌아가기
           </Link>

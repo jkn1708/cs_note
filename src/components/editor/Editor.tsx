@@ -15,8 +15,8 @@ type EditorProps = {
 
 import { MermaidExtension } from "./extensions/MermaidExtension";
 
-const Editor = ({ init_focus = true, content, onChange }: EditorProps) => {
-
+const Editor = ({ init_focus = false, content, onChange }: EditorProps) => {
+  console.log("content",content);
   const editor = useEditor({
     extensions: [StarterKit, MermaidExtension],
     // Don't render immediately on the server to avoid SSR issues
