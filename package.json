@@ -12,6 +12,7 @@
     "@tiptap/pm": "^3.6.6",
     "@tiptap/react": "^3.6.6",
     "@tiptap/starter-kit": "^3.6.6",
+    "isomorphic-dompurify": "^2.35.0",
     "mermaid": "^11.12.2",
     "next": "15.5.4",
     "react": "19.1.0",

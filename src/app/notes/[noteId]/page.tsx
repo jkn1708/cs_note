@@ -1,3 +1,4 @@
+import DOMPurify from "isomorphic-dompurify";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { AppFooter } from "@/components/layout/AppFooter";
@@ -52,14 +53,10 @@ export default function NoteDetailPage({ params }: NoteDetailPageProps) {
             </div>
           </header>
 
-          <div className={styles.content}>
-            {note.content.map((section) => (
-              <section key={section.heading} className={styles.section}>
-                <h2>{section.heading}</h2>
-                <p>{section.body}</p>
-              </section>
-            ))}
-          </div>
+          <div
+            className={styles.content}
+            dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(note.content) }}
+          />
         </article>
 
         <footer className={styles.backLinks}>
