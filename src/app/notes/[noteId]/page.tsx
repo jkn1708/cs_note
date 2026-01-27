@@ -3,8 +3,14 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { AppFooter } from "@/components/layout/AppFooter";
 import { AppHeader } from "@/components/layout/AppHeader";
-import { getSampleNote } from "@/mock/sample-notes";
+import { getSampleNote, sampleNoteDetails } from "@/mock/sample-notes";
 import styles from "@/styles/note-detail.module.css";
+
+export async function generateStaticParams() {
+  return Object.keys(sampleNoteDetails).map((noteId) => ({
+    noteId: noteId,
+  }));
+}
 
 type NoteDetailPageProps = {
   params: Promise<{
