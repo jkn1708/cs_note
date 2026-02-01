@@ -2,11 +2,11 @@ import Link from "next/link";
 import { AppFooter } from "@/components/layout/AppFooter";
 import { AppHeader } from "@/components/layout/AppHeader";
 import { NoteCard } from "@/components/notes/NoteCard";
-import { sampleNotes } from "@/mock/sample-notes";
+import { sampleNoteDetails } from "@/mock/sample-notes";
 import styles from "@/styles/list.module.css";
 
 export default function NoteList() {
-  const featuredNotes = sampleNotes.slice(0, 3);
+  const featuredNotes = Object.values(sampleNoteDetails)
 
   return (
     <div className={styles.page}>

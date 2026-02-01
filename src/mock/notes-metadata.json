@@ -1,0 +1,34 @@
+[
+  {
+    "id": "execution-context",
+    "title": "실행 컨텍스트와 콜스택",
+    "description": "자바스크립트 엔진이 코드를 실행하기 위해 필요한 환경 정보와 실행 순서를 관리하는 메커니즘을 상세히 알아봅니다.",
+    "tags": ["JavaScript", "JS-Engine"],
+    "updatedAt": "2024-02-19",
+    "readingTime": "약 12분"
+  },
+  {
+    "id": "hoisting",
+    "title": "호이스팅 (Hoisting)",
+    "description": "자바스크립트에서 선언문이 범위의 최상단으로 끌어올려지는 것처럼 보이는 호이스팅 현상의 실체와 TDZ에 대해 알아봅니다.",
+    "tags": ["JavaScript", "Hoisting", "TDZ"],
+    "updatedAt": "2026-02-01",
+    "readingTime": "약 10분"
+  },
+  {
+    "id": "this",
+    "title": "this",
+    "description": "자바스크립트에서 가장 혼란스러운 개념 중 하나인 this가 함수 호출 방식에 따라 어떻게 결정되는지 명확히 정리합니다.",
+    "tags": ["JavaScript", "this", "Binding"],
+    "updatedAt": "2026-02-01",
+    "readingTime": "약 12분"
+  },
+  {
+    "id": "scope-chain",
+    "title": "스코프 체인 (Scope Chain)",
+    "description": "자바스크립트 엔진이 식별자를 찾기 위해 스코프를 계층적으로 탐색하는 원리와 전역/지역 스코프의 차이를 알아봅니다.",
+    "tags": ["JavaScript", "Scope", "ScopeChain"],
+    "updatedAt": "2026-02-01",
+    "readingTime": "약 8분"
+  }
+]
