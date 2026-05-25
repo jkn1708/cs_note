@@ -45,6 +45,68 @@
 - `searchNotes(query, tag?)`
 - 목록 필터 UI 컴포넌트 추가
 
+### 1.5단계: 카테고리/메인 태그/세부 태그 구조로 확장
+
+노트가 100개 이상으로 늘어나면 단일 태그가 너무 많아져서 목록 화면의 필터가 복잡해질 수 있다. 따라서 노트 분류를 `category`, `mainTag`, `tags` 3단계로 나눈다.
+
+분류 기준:
+
+- `category`: 큰 학습 영역. 노트당 1개만 가진다. 예: `Frontend`, `Language`, `CS`, `Database`
+- `mainTag`: 해당 노트의 핵심 주제. 노트당 1개만 가진다. 예: `JavaScript`, `React`, `Network`
+- `tags`: 세부 키워드. 노트당 1개 이상 가진다. 예: `ExecutionContext`, `CallStack`, `Hoisting`
+
+목표:
+
+- 필터 UI에는 `category`를 우선 표시
+- `category`에 hover/focus 시 해당 카테고리에 속한 `mainTag` 목록까지만 표시
+- `category`를 클릭하면 해당 카테고리의 모든 노트 표시
+- `mainTag`를 클릭하면 해당 메인 태그의 노트만 표시
+- 실제 필터링은 `category`와 `mainTag`까지만 지원
+- 세부 `tags`는 검색과 노트 카드/상세 화면의 보조 정보로 사용
+- 노트 카드에서는 `category`, `mainTag`를 우선 노출하고, 세부 `tags`는 보조 정보로 표현
+
+예상 데이터 구조:
+
+```json
+{
+  "id": "execution-context",
+  "title": "실행 컨텍스트와 콜스택",
+  "description": "자바스크립트 엔진이 코드를 실행하기 위해 필요한 환경 정보와 실행 순서를 관리하는 메커니즘을 상세히 알아봅니다.",
+  "category": "Language",
+  "mainTag": "JavaScript",
+  "tags": ["JS-Engine", "CallStack", "ExecutionContext"],
+  "updatedAt": "2024-02-19",
+  "readingTime": "약 12분"
+}
+```
+
+기존 `tags` 배열을 바로 제거하기보다, 마이그레이션 단계에서는 다음 둘 중 하나를 선택한다.
+
+1. `category`, `mainTag`를 새로 추가하고 기존 `tags`는 세부 태그로 유지
+2. 기존 `tags`의 첫 번째 값을 `mainTag`로 승격하고 나머지를 세부 `tags`로 정리
+
+초기에는 1번이 안전하다. 기존 목록/상세 화면이 깨질 가능성이 적고, 데이터 변환을 단계적으로 할 수 있다. 이후 작성 화면에서 `category` 1개, `mainTag` 1개, 세부 `tags` 1개 이상을 필수 입력으로 받는다.
+
+필터 동작:
+
+- `/list?category=Language`
+- `/list?category=Language&mainTag=JavaScript`
+- 검색어가 있으면 제목, 설명, `category`, `mainTag`, 세부 `tags`를 함께 검색
+- `category` 필터가 선택된 상태에서 검색어를 입력하면 해당 카테고리 안에서만 검색
+- `mainTag` 필터가 선택된 상태에서 검색어를 입력하면 해당 메인 태그 안에서만 검색
+- hover/focus로 보이는 목록은 세부 `tags`가 아니라 `mainTag` 목록까지만 표시
+
+예상 구현 단위:
+
+- `NoteSummary` 타입에 `category`, `mainTag` 추가
+- mock 메타데이터를 `category`, `mainTag`, `tags` 구조로 정리
+- `getCategorySummaries()` 유틸 추가
+- `getMainTagSummaries(category?)` 유틸 추가
+- 기존 `getAllTags()`는 세부 태그 검색/표시용으로 유지
+- `NoteListExplorer`의 selectedTag를 selectedCategory, selectedMainTag로 변경
+- 카테고리 버튼 hover/focus 시 메인 태그 목록을 보여주는 UI 추가
+- 작성 화면에서 `category`, `mainTag`, `tags` 입력을 분리
+
 ### 2단계: 태그 통계 페이지 추가
 
 목표는 내가 어떤 주제를 얼마나 정리했는지 한눈에 보는 것이다.
